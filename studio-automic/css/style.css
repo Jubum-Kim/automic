@@ -1,0 +1,1941 @@
+/* ==========================================================================
+   STUDIO AUTOMIC - 신차장기렌트 / 리스 프리미엄 고객상담 홈페이지
+   디자인 아이덴티티: 첫번째 이미지의 깔끔한 레드/화이트/차콜 카드 + nh-a1auto의 신뢰 구조
+   ========================================================================== */
+
+:root {
+  --primary-red: #d92525;
+  --primary-red-hover: #b91c1c;
+  --primary-red-light: #fef2f2;
+  --primary-red-glow: rgba(217, 37, 37, 0.15);
+  
+  --trust-blue: #0076c0;
+  --trust-blue-hover: #005f9e;
+  --trust-blue-light: #eef7fc;
+  
+  --dark-charcoal: #111827;
+  --dark-surface: #1f2937;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --bg-subtle: #f1f5f9;
+  
+  --border-light: #e2e8f0;
+  --border-card: #e5e7eb;
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 16px 32px -4px rgba(0, 0, 0, 0.12), 0 6px 12px -2px rgba(217, 37, 37, 0.08);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --container-max: 1240px;
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Top Notification Bar
+   -------------------------------------------------------------------------- */
+.top-notice-bar {
+  background-color: #111827;
+  color: #e5e7eb;
+  font-size: 13px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  letter-spacing: -0.2px;
+}
+
+.top-notice-bar .badge {
+  background-color: var(--primary-red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.top-notice-bar .phone-link {
+  color: #fef08a;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Header & GNB
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-brand {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-brand .sub {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #9ca3af;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.logo-dot {
+  color: var(--primary-red);
+  font-weight: 900;
+}
+
+.gnb-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.gnb-menu a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  position: relative;
+  padding: 8px 0;
+  transition: color var(--transition-fast);
+}
+
+.gnb-menu a:hover,
+.gnb-menu a.active {
+  color: var(--primary-red);
+}
+
+.gnb-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-red);
+  transition: width var(--transition-fast);
+}
+
+.gnb-menu a:hover::after,
+.gnb-menu a.active::after {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.direct-tel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.direct-tel .label {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.direct-tel .num {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.btn-gnb-consult {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-gnb-consult:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 37, 37, 0.3);
+}
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 24px;
+  color: #111827;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Carousel Banner (3종 슬라이더)
+   -------------------------------------------------------------------------- */
+.hero-slider-section {
+  position: relative;
+  background-color: #0b1120;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  height: 520px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transform: scale(1.02);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Slide 1: 코오롱 모빌리티 x 스튜디오 아우토믹 & 잡코리아 인증 신뢰 (3번째 첨부 사옥 이미지 적용) */
+.slide-bg-1 {
+  background: linear-gradient(90deg, #070e1b 0%, #070e1b 50%, rgba(7, 14, 27, 0.88) 65%, rgba(7, 14, 27, 0.5) 82%, rgba(7, 14, 27, 0.15) 100%),
+              url('../images/kolon_building.png') right center / cover no-repeat;
+}
+
+/* -------------------------------------------------------------
+   코오롱 모빌리티 & 스튜디오 아우토믹 공식 결합 BI (슬림 일체형 뱃지)
+   ------------------------------------------------------------- */
+.bi-collab-capsule {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  height: 28px;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.bi-collab-capsule:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bi-collab-capsule .bi-kolon-img {
+  height: 14px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.bi-collab-capsule .bi-automic-img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 헤더 브랜드 로고 이미지 */
+.header-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 우측 비주얼 카드 내 코오롱 빌딩 미니 프리뷰 */
+.hero-building-thumb-box {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 95px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-building-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 85% center;
+}
+
+.hero-building-thumb-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgba(11, 17, 32, 0.82);
+  backdrop-filter: blur(6px);
+  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Slide 2: studioatm.co.kr 상단 철학 단어 중심 인포그래픽 */
+.slide-bg-2 {
+  background: radial-gradient(circle at 25% 40%, rgba(185, 28, 28, 0.4) 0%, rgba(17, 24, 39, 0.98) 75%),
+              url('https://cdn.mocar.dev/upload/1770105196552-1ttp8kesxdd-thumb.webp') center/cover;
+}
+
+/* Slide 3: 회사 사훈 및 정직한 판매 원칙 신뢰 */
+.slide-bg-3 {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 41, 59, 0.9) 100%);
+}
+
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-badge-tag {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f3f4f6;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-badge-tag.highlight {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -1.2px;
+  margin-bottom: 18px;
+}
+
+.hero-title .text-red {
+  color: #f87171;
+}
+
+.hero-title .text-yellow {
+  color: #fde047;
+}
+
+.hero-desc {
+  font-size: 17px;
+  color: #d1d5db;
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 600px;
+  word-break: keep-all;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-hero-primary {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(217, 37, 37, 0.4);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Visual Side of Hero */
+.hero-visual-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-visual-card .partner-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.partner-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.partner-tag {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.hero-car-preview-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+  animation: floatSlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+.hero-feature-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pill-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  text-align: center;
+}
+
+.pill-item .val {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fde047;
+}
+
+.pill-item .lab {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Slider Controls */
+.hero-slider-nav {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.hero-slider-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot-btn {
+  width: 32px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.dot-btn.active {
+  width: 60px;
+  background-color: var(--primary-red);
+}
+
+.slider-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all var(--transition-fast);
+}
+
+.arrow-btn:hover {
+  background: var(--primary-red);
+}
+
+/* --------------------------------------------------------------------------
+   Section Common Header
+   -------------------------------------------------------------------------- */
+.section-wrap {
+  padding: 70px 0;
+  position: relative;
+}
+
+.section-wrap.bg-gray {
+  background-color: var(--bg-light);
+}
+
+.section-title-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-heading-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-red);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.section-badge::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-red);
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.8px;
+  line-height: 1.3;
+}
+
+.section-title span.accent {
+  color: var(--primary-red);
+}
+
+.section-subtext {
+  font-size: 15px;
+  color: #6b7280;
+  margin-top: 6px;
+  letter-spacing: -0.3px;
+}
+
+.slider-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-arrow-btn:hover {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Vehicle Card Slider & Grid (첫번째 첨부 이미지 스타일 충실 반영)
+   -------------------------------------------------------------------------- */
+.car-slider-viewport {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 8px 4px 20px 4px;
+}
+
+.car-slider-track {
+  display: flex;
+  gap: 22px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* 개별 차량 카드 (첫번째 이미지 형태: 깔끔한 라운드, 상단 붉은 뱃지, 영문/한글 모델명, 옵션가, 렌트/리스 테이블, 하단 상담신청 버튼) */
+.car-card {
+  flex: 0 0 calc((100% - 66px) / 4);
+  min-width: 280px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px 20px 20px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(217, 37, 37, 0.3);
+}
+
+/* 상단 뱃지 */
+.card-badge-box {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+}
+
+.card-badge {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: -0.3px;
+  box-shadow: 0 2px 6px rgba(217, 37, 37, 0.25);
+}
+
+/* 차종 타이틀 */
+.card-header-info {
+  margin-bottom: 12px;
+  padding-right: 70px; /* 뱃지 공간 확보 */
+}
+
+.card-title-en {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.card-title-ko {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 4px;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 차량 썸네일 이미지 */
+.card-img-wrap {
+  width: 100%;
+  height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 16px 0;
+  position: relative;
+}
+
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.08));
+}
+
+.car-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+/* 옵션포함 차량가액 */
+.card-price-row {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+  margin-bottom: 14px;
+}
+
+.price-sub-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.price-main-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.6px;
+  margin-top: 2px;
+}
+
+/* 2열 비교 테이블 (첫번째 이미지 형태: 구분 | 렌트(선납30%) | 리스(보증30%)) */
+.card-finance-table {
+  width: 100%;
+  background-color: #f8fafc;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  font-size: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.finance-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 6px 4px;
+}
+
+.finance-row:not(:last-child) {
+  border-bottom: 1px solid #eef2f6;
+}
+
+.finance-row.header {
+  background-color: #e2e8f0;
+  font-weight: 700;
+  color: #334155;
+  font-size: 11px;
+}
+
+.finance-row .cell-label {
+  color: #64748b;
+  font-weight: 600;
+  border-right: 1px solid #eef2f6;
+}
+
+.finance-row .cell-rent {
+  color: #1e293b;
+  font-weight: 700;
+  border-right: 1px solid #eef2f6;
+}
+
+.finance-row .cell-lease {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.finance-row .cell-rent.price,
+.finance-row .cell-lease.price {
+  color: var(--primary-red);
+  font-weight: 800;
+}
+
+/* 태그 리스트 */
+.card-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tag-badge {
+  font-size: 11px;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* 하단 상담 신청 버튼 */
+.btn-card-consult {
+  width: 100%;
+  background-color: #111827;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 0;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all var(--transition-fast);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.car-card:hover .btn-card-consult,
+.btn-card-consult:hover {
+  background-color: var(--primary-red);
+  box-shadow: 0 4px 12px rgba(217, 37, 37, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   완충 섹션 (Buffer Section - 즉시출고와 친환경 특가 사이)
+   "너무 차량만 나오고 있어서 즉시출고 와 친환경 특가 사이에 완충할 수 있는 섹션"
+   - 스튜디오 아우토믹만의 스마트 장기렌트/리스 솔루션
+   - 4대 차별화 경쟁력
+   - 장기렌트 vs 리스 스마트 비교 가이드
+   - 실시간 신뢰 지표 카운터
+   -------------------------------------------------------------------------- */
+.buffer-solution-section {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+  padding: 90px 0;
+  position: relative;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.buffer-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px auto;
+}
+
+.buffer-header .badge {
+  background-color: var(--primary-red-light);
+  color: var(--primary-red);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.buffer-header h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -1px;
+  line-height: 1.35;
+}
+
+.buffer-header p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-top: 10px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 4대 차별화 솔루션 그리드 */
+.buffer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.buffer-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.buffer-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-red);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.buffer-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--primary-red-light);
+  color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.buffer-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.buffer-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 장기렌트 vs 리스 비교 인포그래픽 가이드 */
+.compare-guide-box {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  padding: 40px;
+  margin-bottom: 50px;
+}
+
+.compare-guide-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.compare-guide-title h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.6px;
+}
+
+.compare-tabs {
+  display: flex;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-full);
+  padding: 4px;
+}
+
+.tab-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.tab-btn.active {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(217, 37, 37, 0.25);
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.compare-table th {
+  background-color: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+}
+
+.compare-table td.highlight {
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+/* 신뢰 통계 카운터 바 */
+.trust-stats-bar {
+  background: #111827;
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item {
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.stat-val {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fde047;
+  letter-spacing: -1px;
+}
+
+.stat-lab {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   신뢰 및 고객보호 3대 원칙 섹션 (첫번째/두번째 첨부 이미지 하단 충실 반영)
+   -------------------------------------------------------------------------- */
+.trust-principles-section {
+  padding: 85px 0 70px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.trust-principles-header {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.trust-subhead-text {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  word-break: keep-all;
+}
+
+.trust-accent-line {
+  width: 2px;
+  height: 28px;
+  background-color: var(--primary-red);
+  margin: 0 auto 20px auto;
+}
+
+.trust-main-quote {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.6px;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.principle-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.principle-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 37, 37, 0.3);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.principle-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary-red);
+  margin-bottom: 12px;
+}
+
+.principle-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 14px;
+  letter-spacing: -0.4px;
+}
+
+.principle-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+/* --------------------------------------------------------------------------
+   출고 고객 리뷰 섹션
+   -------------------------------------------------------------------------- */
+.reviews-section {
+  padding: 75px 0;
+  background-color: var(--bg-light);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+}
+
+.review-stars {
+  color: #f59e0b;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.review-tag {
+  display: inline-block;
+  background-color: var(--primary-red-light);
+  color: var(--primary-red);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.review-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  word-break: keep-all;
+  flex-grow: 1;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.review-author {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* --------------------------------------------------------------------------
+   Floating Quick Menu (우측 스크롤 따라다니는 퀵메뉴)
+   - 고객문의, 카카오상담, 상담신청, TOP
+   -------------------------------------------------------------------------- */
+.floating-quick-menu {
+  position: fixed;
+  right: 24px;
+  bottom: 40px;
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+}
+
+.quick-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.quick-btn .icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.quick-btn .label {
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 3px;
+  letter-spacing: -0.3px;
+}
+
+.quick-btn.call {
+  background-color: #111827;
+}
+
+.quick-btn.kakao {
+  background-color: #fee500;
+  color: #181600;
+}
+
+.quick-btn.consult {
+  background-color: var(--primary-red);
+  animation: pulseRed 2s infinite;
+}
+
+@keyframes pulseRed {
+  0% { box-shadow: 0 0 0 0 rgba(217, 37, 37, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(217, 37, 37, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 37, 37, 0); }
+}
+
+.quick-btn.top-btn {
+  background-color: #ffffff;
+  color: #4b5563;
+  border: 1px solid var(--border-card);
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+}
+
+.quick-btn.top-btn:hover {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Modal Consultation Form (상담 신청 모달)
+   - 상담차종 자동채움
+   - 문의내용 (렌트/리스/기간/선납/내용)
+   - 이름, 연락처
+   - 카카오 or 문자 본인인증 인터랙션
+   - 개인정보 수집/이용약관 동의 (아코디언 토글)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-modal);
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.open .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 24px 28px 18px 28px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.modal-title-group h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.modal-title-group p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: #f3f4f6;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.modal-body {
+  padding: 24px 28px 30px 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 7px;
+}
+
+.form-label .req {
+  color: var(--primary-red);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background-color: #ffffff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px var(--primary-red-glow);
+}
+
+.form-input.highlight-car {
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+  font-weight: 700;
+  color: var(--primary-red);
+}
+
+/* 라디오 / 칩 선택 버튼 그룹 */
+.chips-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip-label {
+  flex: 1;
+  min-width: 80px;
+  position: relative;
+  cursor: pointer;
+}
+
+.chip-label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip-text {
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: #4b5563;
+  transition: all var(--transition-fast);
+}
+
+.chip-label input:checked + .chip-text {
+  background-color: #111827;
+  border-color: #111827;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* 본인인증 섹션 (카카오 or 문자 본인인증) */
+.auth-method-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-auth-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--border-card);
+  background-color: #ffffff;
+  transition: all var(--transition-fast);
+}
+
+.btn-auth-option.kakao {
+  background-color: #fee500;
+  border-color: #fee500;
+  color: #181600;
+}
+
+.btn-auth-option.sms {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.btn-auth-option:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.96);
+}
+
+.auth-verify-box {
+  margin-top: 12px;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: none;
+}
+
+.auth-verify-box.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.verify-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.btn-verify-confirm {
+  background-color: #111827;
+  color: #ffffff;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.auth-status-success {
+  color: #059669;
+  font-weight: 700;
+  font-size: 13px;
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.auth-status-success.active {
+  display: flex;
+}
+
+/* 개인정보 수집/이용약관 및 아코디언 */
+.agreement-box {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.agreement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+.checkbox-custom input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--primary-red);
+}
+
+.btn-accordion-toggle {
+  font-size: 12px;
+  color: #6b7280;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-accordion-toggle:hover {
+  color: var(--primary-red);
+}
+
+.agreement-content-accordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, margin-top 0.35s ease, padding 0.35s ease;
+  background-color: #f8fafc;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.agreement-content-accordion.open {
+  max-height: 240px;
+  overflow-y: auto;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid var(--border-light);
+}
+
+/* 모달 하단 전송 버튼 */
+.btn-submit-consult {
+  width: 100%;
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 15px 0;
+  border-radius: var(--radius-md);
+  margin-top: 22px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(217, 37, 37, 0.35);
+}
+
+.btn-submit-consult:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-1px);
+}
+
+/* 성공 토스트 & 완료 팝업 */
+.success-modal {
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.success-icon-check {
+  width: 64px;
+  height: 64px;
+  background-color: #ecfdf5;
+  color: #10b981;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 20px auto;
+}
+
+.success-modal h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.success-modal p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 60px 0 40px 0;
+  font-size: 13px;
+  border-top: 1px solid #1f2937;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #1f2937;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2.5px;
+}
+
+.footer-logo .dot {
+  color: var(--primary-red);
+}
+
+.footer-slogan {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #d1d5db;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--primary-red);
+}
+
+.footer-content {
+  line-height: 1.8;
+  color: #9ca3af;
+}
+
+.footer-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-info-row span {
+  display: inline-block;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6b7280;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   반응형 미디어 쿼리 (Responsive Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual-card {
+    display: none;
+  }
+  .hero-slider-container {
+    height: auto;
+    min-height: 440px;
+    padding: 40px 0 60px 0;
+  }
+  .car-card {
+    flex: 0 0 calc((100% - 22px) / 2);
+    min-width: 260px;
+  }
+  .buffer-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trust-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-notice-bar {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  .nav-inner {
+    height: 60px;
+  }
+  .gnb-menu {
+    display: none;
+  }
+  .direct-tel {
+    display: none;
+  }
+  .btn-gnb-consult {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-desc {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .car-card {
+    flex: 0 0 88%;
+    min-width: 250px;
+  }
+  .buffer-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .floating-quick-menu {
+    right: 14px;
+    bottom: 20px;
+  }
+  .quick-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .quick-btn .icon {
+    font-size: 16px;
+  }
+  .quick-btn .label {
+    font-size: 9px;
+  }
+  .trust-stats-bar {
+    grid-template-columns: 1fr;
+  }
+  .stat-item::after {
+    display: none !important;
+  }
+}

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스튜디오 아우토믹 (STUDIO AUTOMIC) - 신뢰받는 신차 장기렌트/리스 다이렉트 맞춤견적</title>
+  <meta name="description"
+    content="코오롱모빌리티 제휴 파트너, 업계 10년 이상 정예 전문가의 1:1 전담 케어. 24개 전 금융사 비교견적, 즉시출고, 친환경 특가, 사업자 특판 전문." />
+  <meta property="og:title" content="스튜디오 아우토믹 (STUDIO AUTOMIC) - 신차 장기렌트/리스" />
+  <meta property="og:description" content="판매 이전 고객보호 3대 원칙 준수. 전국 최저가 견적과 7일 이내 즉시출고를 경험하세요." />
+  <meta property="og:type" content="website" />
+
+  <!-- 웹 폰트 (Pretendard) -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- 스타일시트 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- 1. 최상단 알림 바 -->
+  <aside class="top-notice-bar" aria-label="상단 안내 바">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="badge">공식 안내</span>
+        <span>코오롱 모빌리티 X 스튜디오 아우토믹 파트너십 제휴 • 전 금융사 실시간 최저금리 비교 견적</span>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. GNB 헤더 -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner" aria-label="메인 내비게이션">
+        <!-- 브랜드 로고 -->
+        <a href="#" class="logo-area" title="스튜디오 아우토믹 홈으로 이동">
+          <img src="images/automic_logo.png" alt="STUDIO AUTOMIC car, care & more" class="header-logo-img" />
+        </a>
+
+        <!-- GNB 메뉴 (두번째 이미지 구성) -->
+        <ul class="gnb-menu">
+          <li><a href="#sectionPromo">특판차량</a></li>
+          <li><a href="#sectionImmediate">즉시출고</a></li>
+          <li><a href="#sectionEco">친환경 특가</a></li>
+          <li><a href="#sectionBusiness">사업자 특가</a></li>
+          <li><a href="#sectionTrust">고객 신뢰</a></li>
+          <li><a href="#sectionReviews">실출고 후기</a></li>
+        </ul>
+
+        <!-- 헤더 우측 CTA -->
+        <div class="header-right">
+          <div class="direct-tel">
+            <span class="label">전문 컨설턴트 직통</span>
+            <span class="num">1599-7721</span>
+          </div>
+          <button type="button" class="btn-gnb-consult" onclick="window.openConsultModal('실시간 맞춤 견적 신청');">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span>상담 신청</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. 상단 히어로 배너 슬라이더 (3개 슬라이딩) -->
+    <section class="hero-slider-section" aria-label="메인 히어로 프로모션 슬라이더">
+      <div class="hero-slider-container">
+
+        <!-- 슬라이드 1: 코오롱 모빌리티 x 스튜디오아우토믹 Bi 및 잡코리아 신뢰 배너 -->
+        <div class="hero-slide slide-bg-1 active">
+          <div class="container">
+            <div class="hero-content-grid">
+              <div class="hero-text-side">
+                <!-- 코오롱모빌리티 X 스튜디오 아우토믹 공식 결합 BI 캡슐 (옵션 1: 슬림 일체형) -->
+                <div class="hero-badge-row">
+                  <div class="bi-collab-capsule">
+                    <img src="images/kolon_logo.png" alt="KOLON MOBILITY GROUP ✕" class="bi-kolon-img" />
+                    <img src="images/automic_logo.png" alt="STUDIO AUTOMIC" class="bi-automic-img" />
+                  </div>
+                  <span class="hero-badge-tag highlight">OFFICIAL PARTNER</span>
+                  <span class="hero-badge-tag">잡코리아 인증 우수기업</span>
+                </div>
+                <h1 class="hero-title">
+                  공식 파트너십이 보증하는<br />
+                  <span class="text-red">신뢰의 장기렌트·리스</span> 다이렉트 솔루션
+                </h1>
+                <p class="hero-desc">
+                  코오롱 모빌리티 그룹의 인프라와 10년 이상의 정예 전문가가 만나<br />
+                  전 금융사 실시간 최저 금리와 비공식 특별 프로모션을 가장 정직하게 매칭해 드립니다.
+                </p>
+                <div class="hero-actions">
+                  <button type="button" class="btn-hero-primary" onclick="window.openConsultModal('코오롱모빌리티 제휴 특별상담');">
+                    <span>전 금융사 최저가 견적받기</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <a href="#sectionImmediate" class="btn-hero-secondary">
+                    <span>즉시출고 차량 보기</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- 우측 비주얼 인포그래픽 카드 -->
+              <div class="hero-visual-card">
+                <img src="https://cdn.mocar.dev/model-v2/304_4603.png" alt="GENESIS G80" class="hero-car-preview-img" />
+                <div class="hero-feature-pills">
+                  <div class="pill-item">
+                    <div class="val">24개</div>
+                    <div class="lab">제휴 금융사</div>
+                  </div>
+                  <div class="pill-item">
+                    <div class="val">100%</div>
+                    <div class="lab">1:1 전담 케어</div>
+                  </div>
+                  <div class="pill-item">
+                    <div class="val">3~7일</div>
+                    <div class="lab">초고속 즉시출고</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 슬라이드 2: studioatm.co.kr 상단 철학 단어 중심 인포그래픽 -->
+        <div class="hero-slide slide-bg-2">
+          <div class="container">
+            <div class="hero-content-grid">
+              <div class="hero-text-side">
+                <div class="hero-badge-row">
+                  <span class="hero-badge-tag highlight">PHILOSOPHY</span>
+                  <span class="hero-badge-tag">studioatm.co.kr 핵심 가치</span>
+                </div>
+                <h2 class="hero-title">
+                  당신의 라이프스타일에 가장 잘 맞는 차,<br />
+                  <span class="text-yellow">가장 잘 아는 사람들</span>이 제안합니다.
+                </h2>
+                <p class="hero-desc">
+                  렌터카는 차량을 단순 소유하는 것이 아니라 <strong style="color: #fff;">이용하는 서비스</strong>입니다.<br />
+                  따라서 계약 기간 내내 꾸준한 사후 관리와 지속적 케어가 무엇보다 중요합니다.
+                </p>
+                <div class="hero-actions">
+                  <button type="button" class="btn-hero-primary" onclick="window.openConsultModal('라이프스타일 맞춤 컨설팅');">
+                    <span>1:1 맞춤 컨설팅 신청</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <a href="#sectionTrust" class="btn-hero-secondary">
+                    <span>고객보호 3대 원칙 보기</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- 우측 비주얼 -->
+              <div class="hero-visual-card">
+                <div style="font-size: 13px; color: #94a3b8; font-weight: 600; margin-bottom: 8px;">CAR LIFE STYLE
+                  CONCIERGE</div>
+                <div style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">선구매 독점 프리미엄 패키지</div>
+                <img src="https://cdn.mocar.dev/model-v2/307_4586.png" alt="카니발 하이리무진" class="hero-car-preview-img" />
+                <div
+                  style="margin-top: 16px; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; font-size: 13px; color: #e2e8f0; line-height: 1.5;">
+                  "출고 후 번호판 등록부터 정기점검, 사고처리까지 단 1명의 전담 매니저가 전 과정을 케어합니다."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 슬라이드 3: 회사 사훈 및 정직한 판매 원칙 신뢰 배너 -->
+        <div class="hero-slide slide-bg-3">
+          <div class="container">
+            <div class="hero-content-grid">
+              <div class="hero-text-side">
+                <div class="hero-badge-row">
+                  <span class="hero-badge-tag highlight">TRUST FIRST</span>
+                  <span class="hero-badge-tag">판매 이전 고객보호 3대 원칙</span>
+                </div>
+                <h2 class="hero-title">
+                  "허위견적 제로, 스팸 영업 근절"<br />
+                  <span class="text-red">원칙을 지키는 정직한 동행</span>
+                </h2>
+                <p class="hero-desc">
+                  스튜디오 아우토믹은 복수의 낚시성 웹사이트를 개설하지 않으며,<br />
+                  외부 미검증 딜러에게 고객 정보를 일체 이관하지 않는 100% 본사 직영 책임제입니다.
+                </p>
+                <div class="hero-actions">
+                  <button type="button" class="btn-hero-primary" onclick="window.openConsultModal('정직한 안심견적 신청');">
+                    <span>정직한 안심견적 요청하기</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <a href="#sectionBuffer" class="btn-hero-secondary">
+                    <span>렌트 VS 리스 비교하기</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- 우측 비주얼 -->
+              <div class="hero-visual-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                  <span style="font-weight: 800; color: #fde047;">★ 실시간 심사 승인율 98.7%</span>
+                  <span
+                    style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">무보증
+                    전문</span>
+                </div>
+                <img src="https://cdn.mocar.dev/model-v2/303_4699.png" alt="PALISADE" class="hero-car-preview-img" />
+                <div class="hero-feature-pills">
+                  <div class="pill-item">
+                    <div class="val">0원</div>
+                    <div class="lab">초기비용 승인</div>
+                  </div>
+                  <div class="pill-item">
+                    <div class="val">단일</div>
+                    <div class="lab">단일 웹사이트</div>
+                  </div>
+                  <div class="pill-item">
+                    <div class="val">1:1</div>
+                    <div class="lab">책임 전담상담</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 슬라이더 컨트롤러 (도트 & 화살표) -->
+      <div class="hero-slider-nav">
+        <div class="container">
+          <div class="slider-dots">
+            <button type="button" class="dot-btn active" data-index="0" aria-label="슬라이드 1번 보기"></button>
+            <button type="button" class="dot-btn" data-index="1" aria-label="슬라이드 2번 보기"></button>
+            <button type="button" class="dot-btn" data-index="2" aria-label="슬라이드 3번 보기"></button>
+          </div>
+          <div class="slider-arrows">
+            <button type="button" class="arrow-btn prev-slide" aria-label="이전 배너">‹</button>
+            <button type="button" class="arrow-btn next-slide" aria-label="다음 배너">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 특판 차량 섹션 (#sectionPromo) - 첫번째 이미지 디자인 충실 반영 + 슬라이딩 -->
+    <section id="sectionPromo" class="section-wrap" aria-labelledby="promoHeading">
+      <div class="container">
+        <div class="section-title-area">
+          <div class="section-heading-group">
+            <span class="section-badge">SPECIAL PROMOTION</span>
+            <h2 id="promoHeading" class="section-title">
+              10월 <span class="accent">특별 </span>프로모션 차종
+            </h2>
+            <p class="section-subtext">
+              스튜디오 아우토믹 특별 프로모션 차종, 비공식 금융사 혜택까지 더해진 파격적인 조건
+            </p>
+          </div>
+          <div class="slider-nav-arrows">
+            <button type="button" class="nav-arrow-btn prev" aria-label="이전 특판차량">‹</button>
+            <button type="button" class="nav-arrow-btn next" aria-label="다음 특판차량">›</button>
+          </div>
+        </div>
+
+        <!-- 슬라이더 뷰포트 & 트랙 (carsData.js에서 동적 주입) -->
+        <div class="car-slider-viewport">
+          <div id="promoCarTrack" class="car-slider-track">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 즉시출고 섹션 (#sectionImmediate) - 7일 이내 즉시출고 가능 차량 -->
+    <section id="sectionImmediate" class="section-wrap bg-gray" aria-labelledby="immdHeading">
+      <div class="container">
+        <div class="section-title-area">
+          <div class="section-heading-group">
+            <span class="section-badge">IMMEDIATE DELIVERY</span>
+            <h2 id="immdHeading" class="section-title">
+              7일 이내 도착! <span class="accent">즉시출고</span> 가능 차량
+            </h2>
+            <p class="section-subtext">
+              출고 대기 줄이고 견적 혜택은 크게! 선구매 확보 물량으로 계약 즉시 전국 안전 탁송
+            </p>
+          </div>
+          <div class="slider-nav-arrows">
+            <button type="button" class="nav-arrow-btn prev" aria-label="이전 즉시출고차량">‹</button>
+            <button type="button" class="nav-arrow-btn next" aria-label="다음 즉시출고차량">›</button>
+          </div>
+        </div>
+
+        <!-- 슬라이더 뷰포트 & 트랙 -->
+        <div class="car-slider-viewport">
+          <div id="immdCarTrack" class="car-slider-track">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. 완충 섹션 (Buffer Section - 즉시출고와 친환경 특가 사이)
+         * 사용자 필수 요청사항: 너무 차량만 나와 지루하지 않게 완충하는 프리미엄 인포그래픽 섹션
+         ==================================================================== -->
+    <section id="sectionBuffer" class="buffer-solution-section" aria-labelledby="bufferHeading">
+      <div class="container">
+        <!-- 섹션 헤더 -->
+        <div class="buffer-header">
+          <span class="badge">WHY STUDIO AUTOMIC</span>
+          <h2 id="bufferHeading">
+            왜 수많은 고객들이 <span style="color: var(--primary-red);">스튜디오 아우토믹</span>을 선택할까요?
+          </h2>
+          <p>
+            단순히 차를 파는 것에 그치지 않고, 고객님의 자산과 상황에 가장 최적화된 금융 설계와 지속 가능한 사후 케어를 제공합니다.
+          </p>
+        </div>
+
+        <!-- 4대 차별화 핵심 솔루션 카드 -->
+        <div class="buffer-cards-grid">
+          <div class="buffer-card">
+            <div class="buffer-icon-wrap">⚖️</div>
+            <h3>24개 금융사 실시간 역경매</h3>
+            <p>
+              캐피탈사마다 매달 바뀌는 금리와 비공식 할인율을 1:1로 실시간 대조하여 대한민국 최저 월 납입금을 즉시 찾아냅니다.
+            </p>
+          </div>
+
+          <div class="buffer-card">
+            <div class="buffer-icon-wrap">💎</div>
+            <h3>초기비용 0원(무보증) 특화</h3>
+            <p>
+              신용등급 및 매출 증빙이 까다로운 초기 창업자나 프리랜서도 스튜디오 아우토믹만의 심사 노하우로 승인율 98.7%를 보장합니다.
+            </p>
+          </div>
+
+          <div class="buffer-card">
+            <div class="buffer-icon-wrap">⚡</div>
+            <h3>선구매 즉시출고 1,500대</h3>
+            <p>
+              수개월 이상 기다려야 하는 인기 차종도 사전에 선점 확보한 대규모 재고망을 통해 최소 3일, 최대 7일 이내 집 앞까지 인도합니다.
+            </p>
+          </div>
+
+          <div class="buffer-card">
+            <div class="buffer-icon-wrap">🛡️</div>
+            <h3>1:1 전담 만기/반납 케어</h3>
+            <p>
+              영업 딜러가 바뀌어 곤란한 일 없이, 출고부터 정기점검, 사고처리, 만기 시 인수·반납까지 오직 전담 매니저 1명이 끝까지 동행합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 장기렌트 VS 리스 스마트 비교 가이드 인포그래픽 -->
+        <div class="compare-guide-box">
+          <div class="compare-guide-title">
+            <div>
+              <h3>장기렌트 VS 오토리스 스마트 선택 가이드</h3>
+              <p style="font-size: 13px; color: #64748b; margin-top: 4px;">어떤 상품이 나에게 더 유리할까요? 한눈에 명쾌하게 비교해 드립니다.</p>
+            </div>
+            <div class="compare-tabs">
+              <button type="button" class="tab-btn active" data-tab="all">전체 비교</button>
+              <button type="button" class="tab-btn" data-tab="rent">장기렌트 추천</button>
+              <button type="button" class="tab-btn" data-tab="lease">오토리스 추천</button>
+            </div>
+          </div>
+
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">비교 항목</th>
+                  <th style="width: 40%; background: #fef2f2; color: #991b1b;">신차 장기렌트 (Car Rental)</th>
+                  <th style="width: 40%; background: #eff6ff; color: #1e40af;">오토리스 (Auto Lease)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-type="rent">
+                  <td><strong>번호판</strong></td>
+                  <td class="highlight">‘하, 호’ 식별 번호판 (최근 인식 대중화)</td>
+                  <td>일반 자가용 번호판 (품위 유지 우수)</td>
+                </tr>
+                <tr data-type="rent">
+                  <td><strong>보험 및 세금</strong></td>
+                  <td class="highlight">월 렌트료에 자동차세·보험료 완전 포함 (사고 시 할증 0원)</td>
+                  <td>개인 자동차보험 별도 가입 (무사고 경력 유지 가능)</td>
+                </tr>
+                <tr data-type="lease">
+                  <td><strong>부채 및 신용평가</strong></td>
+                  <td class="highlight">금융사 부채로 미인식 (대출 한도 및 DSR 무영향)</td>
+                  <td>금융 대출 상품으로 인식 (신용도에 일부 반영)</td>
+                </tr>
+                <tr data-type="rent">
+                  <td><strong>사업자 비용처리</strong></td>
+                  <td>연간 최대 1,500만 원 전액 손비 인정 (경비 처리)</td>
+                  <td>연간 최대 1,500만 원 전액 손비 인정 (경비 처리)</td>
+                </tr>
+                <tr data-type="all">
+                  <td><strong>부가세 환급</strong></td>
+                  <td class="highlight">9인승 이상 승합차 및 경차 전액 부가세 환급</td>
+                  <td>9인승 이상 승합차 및 경차 전액 부가세 환급</td>
+                </tr>
+                <tr data-type="all">
+                  <td><strong>추천 대상</strong></td>
+                  <td class="highlight">운행거리가 많거나 사고 할증 걱정 없는 편리함을 원하는 분</td>
+                  <td class="highlight">일반 번호판을 선호하고 개인 보험 경력을 유지하고 싶은 분</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 신뢰 통계 카운터 바 -->
+        <div class="trust-stats-bar">
+          <div class="stat-item">
+            <div class="stat-val" data-target="18540" data-suffix="대+">0대+</div>
+            <div class="stat-lab">누적 안전 출고 대수</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" data-target="24" data-suffix="개사">0개사</div>
+            <div class="stat-lab">전 금융사 공식 제휴</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" data-target="99" data-suffix=".4%">0%</div>
+            <div class="stat-lab">고객 재계약 &amp; 만족도</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" data-target="3" data-suffix="일 이내">0일</div>
+            <div class="stat-lab">선구매 즉시출고 평균 소요</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. 친환경 특가 섹션 (#sectionEco) - 전기차 & 하이브리드 -->
+    <section id="sectionEco" class="section-wrap" aria-labelledby="ecoHeading">
+      <div class="container">
+        <div class="section-title-area">
+          <div class="section-heading-group">
+            <span class="section-badge">ECO FRIENDLY</span>
+            <h2 id="ecoHeading" class="section-title">
+              친환경 <span class="accent">전기차 / 하이브리드</span> 특가
+            </h2>
+            <p class="section-subtext">
+              지자체 친환경 보조금 100% 반영! 유지비와 취등록세 절감까지 누리는 친환경 스마트 라인업
+            </p>
+          </div>
+          <div class="slider-nav-arrows">
+            <button type="button" class="nav-arrow-btn prev" aria-label="이전 친환경차량">‹</button>
+            <button type="button" class="nav-arrow-btn next" aria-label="다음 친환경차량">›</button>
+          </div>
+        </div>
+
+        <!-- 슬라이더 뷰포트 & 트랙 -->
+        <div class="car-slider-viewport">
+          <div id="ecoCarTrack" class="car-slider-track">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 사업자 특가 섹션 (#sectionBusiness) - 개인사업자 / 법인 특화 -->
+    <section id="sectionBusiness" class="section-wrap bg-gray" aria-labelledby="bizHeading">
+      <div class="container">
+        <div class="section-title-area">
+          <div class="section-heading-group">
+            <span class="section-badge">BUSINESS SPECIAL</span>
+            <h2 id="bizHeading" class="section-title">
+              개인 &amp; 법인 <span class="accent">사업자 맞춤</span> 특판
+            </h2>
+            <p class="section-subtext">
+              월 렌트·리스료 100% 손비처리, 9인승 이상 부가세 환급 및 건강보험료 인상 없는 절세 특화 라인업
+            </p>
+          </div>
+          <div class="slider-nav-arrows">
+            <button type="button" class="nav-arrow-btn prev" aria-label="이전 사업자차량">‹</button>
+            <button type="button" class="nav-arrow-btn next" aria-label="다음 사업자차량">›</button>
+          </div>
+        </div>
+
+        <!-- 슬라이더 뷰포트 & 트랙 -->
+        <div class="car-slider-viewport">
+          <div id="bizCarTrack" class="car-slider-track">
+            <!-- JS 렌더링 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 고객 신뢰 & 판매 이전 고객보호 3대 원칙 섹션 (#sectionTrust) (첫번째/두번째 이미지 충실 반영) -->
+    <section id="sectionTrust" class="trust-principles-section" aria-labelledby="trustHeading">
+      <div class="container">
+        <div class="trust-principles-header">
+          <p class="trust-subhead-text">
+            스튜디오 아우토믹은, 업계 최초로 장기렌터카 비즈니스 모델을 구축한 전문가와 10년 이상의 정예 멤버로 구성된 회사입니다.<br />
+            자동차에 대한 풍부한 경험과 깊이 있는 노하우를 바탕으로 고객님의 Car Life Style, 재정 상황에 꼭 맞는 맞춤형 컨설팅과 지속적인 케어 서비스를 약속드립니다.
+          </p>
+          <div class="trust-accent-line"></div>
+          <h2 id="trustHeading" class="trust-main-quote">
+            "스튜디오 아우토믹은 판매 이전 고객보호를 위해"
+          </h2>
+        </div>
+
+        <!-- 3대 원칙 카드 (첫번째 이미지 1, 2, 3 카드 디자인 구현) -->
+        <div class="principles-grid">
+          <div class="principle-card">
+            <div class="principle-num">1.</div>
+            <h3 class="principle-title">단일 웹사이트 운영</h3>
+            <p class="principle-desc">
+              동일 사업자명으로 복수의 웹사이트를 개설하여 고객 정보를 무분별하게 획득하지 않습니다. 하나의 정직한 채널만을 통해 투명하게 운영합니다.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-num">2.</div>
+            <h3 class="principle-title">1:1 전담 상담 원칙</h3>
+            <p class="principle-desc">
+              고객님의 소중한 정보는 단 1인의 정예 전담 컨설턴트에게 독점 배정되어 무분별한 영업 전화나 스팸성 연락을 원천 차단합니다.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <div class="principle-num">3.</div>
+            <h3 class="principle-title">검증된 판매 인력</h3>
+            <p class="principle-desc">
+              검증되지 않은 제휴 영업사원이나 외부 프리랜서에게 판매를 대행시키거나 고객정보를 무단 이관하지 않습니다. 100% 정규직 전문가만 상담합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 실제 출고 고객 후기 섹션 (#sectionReviews) -->
+    <section id="sectionReviews" class="reviews-section" aria-labelledby="reviewsHeading">
+      <div class="container">
+        <div class="section-title-area">
+          <div class="section-heading-group">
+            <span class="section-badge">CUSTOMER REVIEWS</span>
+            <h2 id="reviewsHeading" class="section-title">
+              많은 고객이 <span class="accent">스튜디오 아우토믹</span>과 함께하고 있습니다
+            </h2>
+            <p class="section-subtext">
+              출고 고객님들의 솔직한 후기가 아우토믹의 진정한 경쟁력과 신뢰를 증명합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 후기 그리드 (carsData.js에서 동적 주입) -->
+        <div id="reviewGrid" class="reviews-grid">
+          <!-- JS 렌더링 -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11. 오른쪽 스크롤 따라다니는 플로팅 퀵 메뉴 (Floating Quick Menu) -->
+  <aside class="floating-quick-menu" aria-label="빠른 상담 플로팅 메뉴">
+    <!-- 1) 고객문의 전화 -->
+    <a href="tel:1599-7721" class="quick-btn call" title="전화 상담 문의">
+      <span class="icon">📞</span>
+      <span class="label">고객문의</span>
+    </a>
+
+    <!-- 2) 카카오 상담 -->
+    <a href="https://pf.kakao.com" target="_blank" rel="noopener noreferrer" class="quick-btn kakao"
+      title="카카오톡 1:1 상담">
+      <span class="icon">💬</span>
+      <span class="label">카카오상담</span>
+    </a>
+
+    <!-- 3) 상담신청 (차량카드 상담신청 모달과 동일하게 열림) -->
+    <button type="button" class="quick-btn consult" onclick="window.openConsultModal('플로팅바 빠른 상담신청');"
+      title="상담 신청 모달 열기">
+      <span class="icon">📋</span>
+      <span class="label">상담신청</span>
+    </button>
+
+    <!-- 4) 맨 위로 (TOP) -->
+    <button type="button" id="quickTopBtn" class="quick-btn top-btn" title="맨 위로 이동">
+      <span class="icon">▲</span>
+      <span class="label">TOP</span>
+    </button>
+  </aside>
+
+  <!-- 12. 상담 신청 모달 (차량카드 및 플로팅 상담신청 클릭 시 열림) -->
+  <div id="consultModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true"
+    aria-labelledby="modalFormHeading">
+    <div class="modal-dialog">
+      <!-- 모달 헤더 -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="modalFormHeading">신차 장기렌트 / 리스 무료 견적 신청</h3>
+          <p>전 금융사 실시간 최저가 비교 견적서를 1:1 전담 매니저가 무료로 발송해 드립니다.</p>
+        </div>
+        <button type="button" id="modalCloseBtn" class="modal-close-btn" aria-label="모달 닫기">✕</button>
+      </div>
+
+      <!-- 모달 바디 (폼) -->
+      <div class="modal-body">
+        <form id="consultForm" novalidate>
+
+          <!-- 1) 상담 차종 (해당 차량명 자동채움) -->
+          <div class="form-group">
+            <label for="consultCarName" class="form-label">
+              상담 차종 <span class="req">* (선택하신 차종이 자동 입력됩니다)</span>
+            </label>
+            <input type="text" id="consultCarName" class="form-input highlight-car" value=""
+              placeholder="차종을 입력하거나 선택하세요" required />
+          </div>
+
+          <!-- 2) 문의 유형 (장기렌트 / 오토리스 / 미정) -->
+          <div class="form-group">
+            <label class="form-label">이용 방식 <span class="req">*</span></label>
+            <div class="chips-group">
+              <label class="chip-label">
+                <input type="radio" name="financeType" value="rent" checked />
+                <span class="chip-text">신차 장기렌트</span>
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="financeType" value="lease" />
+                <span class="chip-text">오토리스</span>
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="financeType" value="compare" />
+                <span class="chip-text">렌트/리스 비교상담</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 3) 계약 기간 및 초기 비용 선택 -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;" class="form-group">
+            <div>
+              <label for="consultPeriod" class="form-label">이용 기간</label>
+              <select id="consultPeriod" class="form-select">
+                <option value="48개월" selected>48개월 (가장 인기)</option>
+                <option value="36개월">36개월</option>
+                <option value="60개월">60개월</option>
+              </select>
+            </div>
+            <div>
+              <label for="consultDeposit" class="form-label">초기 비용</label>
+              <select id="consultDeposit" class="form-select">
+                <option value="무보증(0원)" selected>무보증 (초기비용 0원)</option>
+                <option value="선납금 30%">선납금 30% (월렌트료 최소화)</option>
+                <option value="보증금 30%">보증금 30% (만기 전액환급)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 4) 고객 성함 & 고객 분류 -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;" class="form-group">
+            <div>
+              <label for="consultName" class="form-label">고객 성함 <span class="req">*</span></label>
+              <input type="text" id="consultName" class="form-input" placeholder="홍길동" required />
+            </div>
+            <div>
+              <label for="consultCustomerType" class="form-label">고객 분류</label>
+              <select id="consultCustomerType" class="form-select">
+                <option value="개인">개인</option>
+                <option value="개인사업자">개인사업자</option>
+                <option value="법인사업자">법인사업자</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 5) 연락처 & 카카오 or 문자 본인인증 -->
+          <div class="form-group">
+            <label for="consultPhone" class="form-label">
+              연락처 (휴대폰 번호) <span class="req">*</span>
+            </label>
+            <input type="tel" id="consultPhone" class="form-input" placeholder="010-1234-5678" maxlength="13"
+              required />
+
+            <!-- 본인인증 선택 버튼 -->
+            <div class="auth-method-row">
+              <button type="button" id="btnAuthKakao" class="btn-auth-option kakao">
+                <span>💬 카카오 본인인증</span>
+              </button>
+              <button type="button" id="btnAuthSms" class="btn-auth-option sms">
+                <span>✉️ 문자(SMS) 본인인증</span>
+              </button>
+            </div>
+
+            <!-- 인증번호 입력 박스 (버튼 클릭 시 표시) -->
+            <div id="authVerifyBox" class="auth-verify-box">
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #475569;">
+                <span>인증번호 4자리를 입력해주세요.</span>
+                <span id="authTimer" style="color: var(--primary-red); font-weight: 700;">3:00</span>
+              </div>
+              <div class="verify-input-row">
+                <input type="text" id="authCodeInput" class="form-input" placeholder="인증번호 4자리 (예: 7788)"
+                  maxlength="6" />
+                <button type="button" id="btnAuthConfirm" class="btn-verify-confirm">인증 확인</button>
+              </div>
+            </div>
+
+            <!-- 인증 완료 상태 배지 -->
+            <div id="authStatusSuccess" class="auth-status-success">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              <span>본인인증이 완료되었습니다. (안심 견적 대상자)</span>
+            </div>
+          </div>
+
+          <!-- 6) 추가 문의 내용 -->
+          <div class="form-group">
+            <label for="consultNotes" class="form-label">문의 내용 (희망 옵션, 외장 색상, 출고 희망일 등)</label>
+            <textarea id="consultNotes" class="form-textarea" rows="2"
+              placeholder="선호하시는 색상, 추가 옵션, 또는 궁금하신 점을 자유롭게 적어주세요."></textarea>
+          </div>
+
+          <!-- 7) 개인정보 수집 및 이용약관 동의 (필수) -> 내용보기 클릭 시 아코디언 토글 -->
+          <div class="agreement-box">
+            <div class="agreement-header">
+              <label class="checkbox-custom">
+                <input type="checkbox" id="agreeCheckbox" required />
+                <span>개인정보 수집 및 이용약관에 동의합니다. <span class="req">(필수)</span></span>
+              </label>
+              <button type="button" id="accordionToggleBtn" class="btn-accordion-toggle">내용보기 ▼</button>
+            </div>
+
+            <!-- 아코디언 약관 본문 -->
+            <div id="agreementAccordion" class="agreement-content-accordion">
+              <strong>[개인정보 수집 및 이용 목적]</strong><br />
+              1. 수집 항목: 성명, 연락처, 희망차종, 고객분류, 문의내용<br />
+              2. 이용 목적: 신차 장기렌트/리스 최저가 비교견적 산출 및 1:1 전담 시니어 컨설턴트 상담 연결<br />
+              3. 보유 및 이용 기간: 상담 신청일로부터 3개월 후 지체 없이 파기 (단, 관계 법령에 의해 보존할 필요가 있는 경우 해당 법령에 따름)<br />
+              4. 동의 거부 권리: 본 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며, 동의 거부 시 무료 비교견적 및 상담 서비스 제공이 제한될 수 있습니다.<br />
+              <br />
+              <strong>[스튜디오 아우토믹 고객보호 서약]</strong><br />
+              본 사이트는 고객정보 보호를 최우선으로 하며, 타 사이트로의 고객정보 재판매, 무분별한 스팸 발송, 외부 제휴영업사원 이관을 엄격히 금지합니다.
+            </div>
+          </div>
+
+          <!-- 제출 버튼 -->
+          <button type="submit" class="btn-submit-consult">
+            <span>무료 비교견적 &amp; 1:1 상담 신청하기</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. 푸터 (Footer) (두번째 이미지 참고: 회사정보, 이용약관, 개인정보처리방침, 고객센터) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>STUDI<span class="dot">O</span> AUTOMIC</span>
+          </div>
+          <p class="footer-slogan">
+            당신의 라이프스타일에 가장 잘 맞는 차, 가장 잘 아는 사람들이 제안합니다.
+          </p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#sectionPromo">특판차량</a></li>
+          <li><a href="#sectionImmediate">즉시출고</a></li>
+          <li><a href="#sectionEco">친환경 특가</a></li>
+          <li><a href="#sectionBusiness">사업자 특판</a></li>
+          <li><a href="#sectionTrust">고객보호 3원칙</a></li>
+          <li><a href="javascript:void(0);" onclick="alert('스튜디오 아우토믹 서비스 이용약관 전문입니다.');">이용약관</a></li>
+          <li><a href="javascript:void(0);" onclick="alert('스튜디오 아우토믹 개인정보처리방침 전문입니다.');">개인정보처리방침</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-info-row">
+          <span><strong>상호명:</strong> (주)스튜디오 아우토믹 (STUDIO AUTOMIC)</span>
+          <span><strong>대표자:</strong> 김대표</span>
+          <span><strong>사업자등록번호:</strong> 120-88-01928</span>
+          <span><strong>통신판매업신고:</strong> 제 2024-서울강남-0314호</span>
+        </div>
+        <div class="footer-info-row">
+          <span><strong>본사 주소:</strong> 서울특별시 강남구 테헤란로 425 신덕빌딩 8층 스튜디오 아우토믹</span>
+          <span><strong>고객센터:</strong> 1599-7721 (평일 09:00 ~ 18:30)</span>
+          <span><strong>이메일:</strong> contact@studioatm.co.kr</span>
+        </div>
+        <div class="footer-info-row">
+          <span><strong>제휴 및 업무협력:</strong> 코오롱 모빌리티 그룹 공식 파트너사</span>
+          <span><strong>개인정보관리책임자:</strong> 정보보호담당관 (privacy@studioatm.co.kr)</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 STUDIO AUTOMIC Co., Ltd. All rights reserved. 본 웹사이트의 모든 콘텐츠 및 디자인은 저작권법의 보호를 받습니다.
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <span>단일 공식 웹사이트 인증</span>
+          <span>•</span>
+          <span>SSL 256bit 금융 보안 암호화 적용</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 메인 스크립트 모듈 -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
