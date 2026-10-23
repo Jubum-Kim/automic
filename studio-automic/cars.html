@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스튜디오 아우토믹 (STUDIO AUTOMIC) - 특판 / 즉시출고 / 친환경 / 사업자 맞춤 차종 검색</title>
+  <meta name="description"
+    content="국산 및 수입 전 브랜드, 24개 전 금융사 비교견적. 특판차량, 즉시출고, 친환경 특가, 사업자 특판 실시간 맞춤 필터링." />
+  <meta property="og:title" content="스튜디오 아우토믹 (STUDIO AUTOMIC) - 실시간 맞춤 차종 검색" />
+  <meta property="og:description" content="제조사, 차종, 연료별 최적화 실시간 다이렉트 견적 비교." />
+  <meta property="og:type" content="website" />
+
+  <!-- 웹 폰트 (Pretendard) -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- 스타일시트 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- 1. 최상단 알림 바 -->
+  <aside class="top-notice-bar" aria-label="상단 안내 바">
+    <div class="container top-notice-container">
+      <div class="top-notice-left">
+        <span class="badge">공식 안내</span>
+        <span class="top-notice-text">코오롱 모빌리티 X 스튜디오 아우토믹 파트너십 제휴 • 전 금융사 실시간 최저금리 비교 견적</span>
+      </div>
+      <div class="top-notice-right">
+        <a href="index.html">← 메인 홈으로 가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. GNB 헤더 -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner" aria-label="메인 내비게이션">
+        <!-- 브랜드 로고 -->
+        <a href="index.html" class="logo-area" title="스튜디오 아우토믹 홈으로 이동">
+          <img src="images/automic_logo.png" alt="STUDIO AUTOMIC car, care & more" class="header-logo-img" />
+        </a>
+
+        <!-- GNB 메뉴 (서브페이지 연결) -->
+        <ul class="gnb-menu">
+          <li><a href="cars.html?category=promo">특판차량</a></li>
+          <li><a href="cars.html?category=immd">즉시출고</a></li>
+          <li><a href="cars.html?category=eco">친환경 특가</a></li>
+          <li><a href="cars.html?category=biz">사업자 특가</a></li>
+          <li><a href="index.html#sectionTrust">고객 신뢰</a></li>
+          <li><a href="index.html#sectionReviews">실출고 후기</a></li>
+        </ul>
+
+        <!-- 헤더 우측 CTA -->
+        <div class="header-right">
+          <div class="direct-tel">
+            <span class="label">전문 컨설턴트 직통</span>
+            <span class="num">1599-7721</span>
+          </div>
+          <button type="button" class="btn-gnb-consult" onclick="window.openConsultModal('빠른 간편상담');">
+            간편 견적 신청
+          </button>
+          <!-- 모바일 햄버거 메뉴 버튼 -->
+          <button type="button" class="btn-mobile-menu-toggle" id="mobileMenuToggle" aria-label="모바일 메뉴 열기">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 모바일 슬라이드 내비게이션 드로어 -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true">
+    <div class="mobile-drawer-content" role="dialog" aria-modal="true" aria-label="모바일 내비게이션">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="drawer-logo" title="스튜디오 아우토믹 홈">
+          <img src="images/automic_logo.png" alt="STUDIO AUTOMIC" />
+        </a>
+        <button type="button" class="btn-drawer-close" id="mobileDrawerClose" aria-label="메뉴 닫기">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <div class="drawer-section-title">차량 맞춤 검색 카테고리</div>
+        <ul class="mobile-drawer-nav">
+          <li>
+            <a href="cars.html?category=promo" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge promo">HOT</span>
+                <strong>10월 특별 프로모션</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=immd" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge immd">7일</span>
+                <strong>즉시출고 가능 차량</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=eco" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge eco">ECO</span>
+                <strong>친환경 전기·하이브리드</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=biz" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge biz">BIZ</span>
+                <strong>사업자 맞춤 특판</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=all" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge all">ALL</span>
+                <strong>전체 차종 필터 검색</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="drawer-section-title" style="margin-top: 24px;">브랜드 안내</div>
+        <ul class="mobile-drawer-subnav">
+          <li><a href="index.html#sectionTrust">🏢 코오롱 모빌리티 파트너십 & 고객 신뢰</a></li>
+          <li><a href="index.html#sectionReviews">⭐ 실출고 고객 생생 리뷰</a></li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="tel:1599-7721" class="drawer-tel-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <div>
+            <span class="tel-sub">전문 컨설턴트 직통</span>
+            <strong class="tel-main">1599-7721</strong>
+          </div>
+        </a>
+        <button type="button" class="drawer-consult-btn" onclick="window.openConsultModal('모바일 메뉴 간편 견적');">
+          무료 비교견적 신청하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 3. 서브 히어로 배너 (카테고리 타이틀 & 설명) -->
+    <section class="sub-hero-banner">
+      <div class="container">
+        <div class="sub-hero-header">
+          <span id="subHeroBadge" class="sub-hero-badge">SPECIAL PROMOTION</span>
+          <h1 id="subHeroTitle" class="sub-hero-title">10월 특별 프로모션 차종</h1>
+          <p id="subHeroDesc" class="sub-hero-desc">
+            스튜디오 아우토믹 특별 프로모션 차종, 비공식 금융사 혜택까지 더해진 파격적인 조건
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 서브페이지 본문 (스마트 필터 & 결과 그리드) -->
+    <section class="sub-page-wrap">
+      <div class="container">
+
+        <!-- 모바일 바텀시트 백드롭 -->
+        <div class="filter-sheet-backdrop" id="filterSheetBackdrop"></div>
+
+        <!-- 모바일 전용 필터 호출 바 -->
+        <div class="mobile-filter-trigger-bar">
+          <button type="button" class="btn-mobile-filter-open" id="openMobileFilterBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span class="btn-txt">필터 보기</span>
+            <span id="mobileFilterBadge" class="mobile-filter-badge" style="display: none;">0</span>
+          </button>
+          <button type="button" id="mobileFilterResetBtn" class="btn-mobile-filter-reset" title="선택 필터 초기화">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            <span>초기화</span>
+          </button>
+        </div>
+
+        <!-- 스마트 다중 필터 카드 (모바일에서는 바텀시트로 아래에서 슬라이드 업) -->
+        <div class="filter-card" id="filterCard">
+          <div class="filter-sheet-handle"></div>
+
+          <!-- 필터 헤더 바 -->
+          <div class="filter-header-bar">
+            <div class="filter-header-left">
+              <h2 class="filter-header-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>차량 상세 필터 검색</span>
+              </h2>
+              <button type="button" id="filterResetBtn" class="filter-reset-btn" title="모든 필터를 기본 상태로 되돌립니다">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                  <path d="M3 3v5h5"></path>
+                </svg>
+                <span>필터 초기화</span>
+              </button>
+            </div>
+
+            <!-- 모바일 바텀시트 전용 닫기 버튼 -->
+            <button type="button" class="btn-filter-sheet-close" id="closeFilterSheetBtn" aria-label="필터 닫기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <!-- 차량명 직접 검색 인풋 -->
+            <div class="filter-search-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="carSearchInput" placeholder="차량명, 모델명 또는 태그를 검색하세요" autocomplete="off" />
+            </div>
+          </div>
+
+          <!-- (1) 제조사 필터 (로고 포함) -->
+          <div class="filter-group brand-filter-group">
+            <div class="filter-group-header">
+              <span class="filter-group-title">제조사 브랜드</span>
+              <div class="brand-origin-tabs">
+                <button type="button" class="brand-origin-btn active" data-origin="all">전체</button>
+                <button type="button" class="brand-origin-btn" data-origin="domestic">국산 (6)</button>
+                <button type="button" class="brand-origin-btn" data-origin="import">수입 (9)</button>
+              </div>
+            </div>
+            <!-- 제조사 칩 동적 주입 -->
+            <div id="brandChipsGrid" class="brand-chips-grid">
+              <!-- JS 렌더링 -->
+            </div>
+          </div>
+
+          <!-- (2) 차종 크기 필터 -->
+          <div class="filter-group">
+            <div class="filter-group-header">
+              <span class="filter-group-title">차종 크기</span>
+            </div>
+            <div class="filter-chips-row">
+              <button type="button" class="filter-chip-btn active" data-filter-group="size" data-val="">전체 크기</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="경차">경차</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="소형차">소형차</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="준중형차">준중형차</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="중형차">중형차</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="준대형차">준대형차</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="size" data-val="대형차">대형차</button>
+            </div>
+          </div>
+
+          <!-- (3) 차종 형태 필터 -->
+          <div class="filter-group">
+            <div class="filter-group-header">
+              <span class="filter-group-title">차종 형태 (바디 타입)</span>
+            </div>
+            <div class="filter-chips-row">
+              <button type="button" class="filter-chip-btn active" data-filter-group="bodyType" data-val="">전체 형태</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="세단">세단</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="SUV">SUV</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="승합">승합 (RV/MPV)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="해치백">해치백</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="쿠페">쿠페</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="왜건">왜건</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="컨버터블">컨버터블 (오픈카)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="bodyType" data-val="트럭">트럭 (화물)</button>
+            </div>
+          </div>
+
+          <!-- (4) 연료 구분 필터 -->
+          <div class="filter-group">
+            <div class="filter-group-header">
+              <span class="filter-group-title">연료 구분</span>
+            </div>
+            <div class="filter-chips-row">
+              <button type="button" class="filter-chip-btn active" data-filter-group="fuel" data-val="">전체 연료</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="휘발유">휘발유 (가솔린)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="경유">경유 (디젤)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="하이브리드">하이브리드 (HEV)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="전기">전기 (EV)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="LPG">LPG (LPi)</button>
+              <button type="button" class="filter-chip-btn" data-filter-group="fuel" data-val="수소">수소 (FCEV)</button>
+            </div>
+          </div>
+
+          <!-- 선택된 필터 뱃지 바 -->
+          <div id="activeFiltersBar" class="active-filters-bar" style="display: none;">
+            <!-- JS 동적 생성 -->
+          </div>
+
+          <!-- 모바일 바텀시트 하단 적용 완료 버튼 -->
+          <div class="filter-sheet-apply-bar">
+            <button type="button" class="btn-filter-sheet-apply" id="applyFilterSheetBtn">
+              <span id="filterApplyCountText">맞춤 차량 결과 보기</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 결과 툴바 (카운트 & 정렬 드롭다운) -->
+        <div class="cars-result-toolbar">
+          <div class="result-count-title">
+            <span>검색 결과 총 </span>
+            <span id="totalResultCount" class="count-num">0</span>
+            <span>대의 맞춤 차량</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <label for="carSortSelect" style="font-size: 13px; color: #64748b; font-weight: 600;">정렬 기준:</label>
+            <select id="carSortSelect" class="result-sort-select">
+              <option value="recommend">추천 인기순</option>
+              <option value="rentLow">월 렌트료 낮은순</option>
+              <option value="priceLow">차량가 낮은순</option>
+              <option value="priceHigh">차량가 높은순</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 메인 차량 카드 그리드 (메인과 동일한 카드 템플릿) -->
+        <div id="carsMainGrid" class="cars-main-grid">
+          <!-- JS 동적 렌더링 -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. 모달 팝업 (1:1 맞춤 상담 신청 & 본인인증 폼) -->
+  <div id="consultModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">1:1 책임 전담 상담</span>
+          <h3 id="modalTitle" class="modal-title">신차 장기렌트 / 리스 맞춤 견적 신청</h3>
+        </div>
+        <button type="button" class="btn-modal-close" aria-label="창 닫기">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="consultForm" novalidate>
+          <!-- 선택 차량 안내 (자동 채움) -->
+          <div class="form-group">
+            <label class="form-label">
+              <span>상담 신청 차종</span>
+              <span class="required">*</span>
+            </label>
+            <input type="text" id="consultCarName" name="carName" class="form-input readonly-accent"
+              placeholder="차종을 선택하세요 (예: 제네시스 G80 2.5T)" value="" required />
+            <p class="form-helper-text">선택하신 차종의 실시간 비공식 프로모션과 잔여 즉시출고 재고를 확인해 드립니다.</p>
+          </div>
+
+          <!-- 이용 형태 선택 (렌트 vs 리스) -->
+          <div class="form-group">
+            <label class="form-label">
+              <span>이용 방식</span>
+              <span class="required">*</span>
+            </label>
+            <div class="radio-pill-group">
+              <label class="radio-pill-item">
+                <input type="radio" name="financeType" value="rent" checked />
+                <span>신차 장기렌트 (보험·세금 포함)</span>
+              </label>
+              <label class="radio-pill-item">
+                <input type="radio" name="financeType" value="lease" />
+                <span>오토리스 (일반 번호판)</span>
+              </label>
+              <label class="radio-pill-item">
+                <input type="radio" name="financeType" value="undecided" />
+                <span>전문가 추천 요청</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 계약 기간 및 초기비용 조건 -->
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="contractPeriod">이용 희망 기간</label>
+              <select id="contractPeriod" name="contractPeriod" class="form-select">
+                <option value="48개월" selected>48개월 (가장 인기)</option>
+                <option value="60개월">60개월 (월 납입금 최소)</option>
+                <option value="36개월">36개월</option>
+                <option value="24개월">24개월</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="initialCost">초기비용 조건</label>
+              <select id="initialCost" name="initialCost" class="form-select">
+                <option value="무보증 (초기비용 0원)" selected>무보증 0원 (승인율 98.7% 특화)</option>
+                <option value="선납금 30%">선납금 30% (월 납입금 대폭 할인)</option>
+                <option value="보증금 30%">보증금 30% (만기 시 100% 환급)</option>
+                <option value="보증금 20%">보증금 20%</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 고객 기본 정보 -->
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="userName">
+                <span>신청자 성함 / 상호명</span>
+                <span class="required">*</span>
+              </label>
+              <input type="text" id="userName" name="userName" class="form-input" placeholder="홍길동 또는 (주)아우토믹"
+                required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="userPhone">
+                <span>연락처</span>
+                <span class="required">*</span>
+              </label>
+              <div class="phone-input-wrap">
+                <input type="tel" id="userPhone" name="userPhone" class="form-input" placeholder="010-0000-0000"
+                  maxlength="13" required />
+                <button type="button" id="btnSendAuth" class="btn-auth-send">인증요청</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 본인인증 번호 입력 영역 -->
+          <div id="authCodeBox" class="form-group auth-box" style="display: none;">
+            <label class="form-label" for="authCode">
+              <span>인증번호 4자리 (카카오 알림톡 / SMS 전송)</span>
+              <span class="timer" id="authTimer">03:00</span>
+            </label>
+            <div class="phone-input-wrap">
+              <input type="text" id="authCode" class="form-input" placeholder="인증번호 4자리 입력" maxlength="4" />
+              <button type="button" id="btnVerifyAuth" class="btn-auth-verify">확인</button>
+            </div>
+            <p id="authSuccessMsg" class="auth-success-badge" style="display: none;">✓ 본인인증이 완료되었습니다.</p>
+          </div>
+
+          <!-- 고객 추가 문의사항 -->
+          <div class="form-group">
+            <label class="form-label" for="consultMemo">추가 문의사항 (선택)</label>
+            <textarea id="consultMemo" name="memo" class="form-textarea" rows="2"
+              placeholder="외장 색상, 옵션 등 추가로 원하시는 조건이 있으시면 편하게 적어주세요."></textarea>
+          </div>
+
+          <!-- 개인정보 처리방침 동의 & 아코디언 -->
+          <div class="terms-card">
+            <div class="terms-agree-row">
+              <label class="checkbox-label">
+                <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required checked />
+                <span class="checkbox-custom"></span>
+                <span class="text-bold">[필수] 개인정보 수집 및 이용 동의</span>
+              </label>
+              <button type="button" id="btnToggleTerms" class="btn-toggle-terms" aria-expanded="false">
+                <span>내용 보기</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 아코디언 본문 -->
+            <div id="termsAccordionBody" class="terms-accordion-body">
+              <div class="terms-inner-text">
+                <strong>1. 수집 항목:</strong> 성명, 연락처, 희망 차종, 견적 조건<br />
+                <strong>2. 수집 목적:</strong> 신차 장기렌트/리스 최저가 비교견적 산출 및 1:1 상담 안내<br />
+                <strong>3. 보유 기간:</strong> 상담 완료 후 1년 이내 파기 (고객 요청 시 즉시 파기)<br />
+                <strong>4. 신뢰 원칙:</strong> 스튜디오 아우토믹은 고객님의 정보를 제3자 불법 DB업체에 일체 판매 또는 위탁하지 않습니다.
+              </div>
+            </div>
+          </div>
+
+          <!-- 모달 제출 버튼 -->
+          <div class="modal-footer">
+            <button type="submit" id="btnSubmitConsult" class="btn-modal-submit">
+              <span>최저가 맞춤견적 상담 신청하기</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 사이트 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/automic_logo.png" alt="STUDIO AUTOMIC" class="footer-logo-img" />
+          <p class="footer-slogan">Car, Care &amp; More - 고객의 신뢰와 동행을 최우선으로 생각합니다.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html">홈으로</a></li>
+          <li><a href="cars.html?category=promo">특판차량</a></li>
+          <li><a href="cars.html?category=immd">즉시출고</a></li>
+          <li><a href="cars.html?category=eco">친환경 특가</a></li>
+          <li><a href="cars.html?category=biz">사업자 특가</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-info-row">
+          <span>(주)스튜디오아우토믹</span>
+          <span>대표이사: 김아우</span>
+          <span>사업자등록번호: 123-45-67890</span>
+          <span>통신판매업신고: 제2024-서울강남-0000호</span>
+        </div>
+        <div class="footer-info-row">
+          <span>본사: 서울특별시 강남구 테헤란로 123 아우토믹타워 8층</span>
+          <span>고객센터: 1599-7721 (평일 09:00 ~ 18:00)</span>
+          <span>이메일: contact@studioatm.co.kr</span>
+        </div>
+        <p style="font-size: 11px; color: #64748b; margin-top: 10px;">
+          스튜디오 아우토믹은 여신금융협회에 등록된 합법적 금융 중개 플랫폼이며, 고객의 신용등급에 악영향을 주는 무분별한 과다 조회를 방지합니다.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STUDIO AUTOMIC. All rights reserved.</div>
+        <div style="color: #64748b;">Powered by Kolon Mobility Direct Partner</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 7. 플로팅 퀵메뉴 -->
+  <aside class="floating-quick-menu" aria-label="빠른 문의 메뉴">
+    <a href="tel:1599-7721" class="quick-btn phone" title="전화 상담 연결 (1599-7721)">
+      <span class="icon">📞</span>
+      <span class="label">전화상담</span>
+    </a>
+    <a href="https://pf.kakao.com" target="_blank" rel="noopener noreferrer" class="quick-btn kakao"
+      title="카카오톡 1:1 채팅상담">
+      <span class="icon">💬</span>
+      <span class="label">카톡문의</span>
+    </a>
+    <button type="button" class="quick-btn consult" onclick="window.openConsultModal('플로팅 퀵상담');" title="간편 견적 신청">
+      <span class="icon">📝</span>
+      <span class="label">간편견적</span>
+    </button>
+    <button type="button" id="quickTopBtn" class="quick-btn top" title="맨 위로 이동">
+      <span class="icon">▲</span>
+      <span class="label">TOP</span>
+    </button>
+  </aside>
+
+  <!-- 모듈 스크립트 로드 -->
+  <script type="module" src="js/carsPage.js"></script>
+</body>
+
+</html>

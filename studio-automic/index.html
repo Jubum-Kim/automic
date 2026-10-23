@@ -23,13 +23,10 @@
 
   <!-- 1. 최상단 알림 바 -->
   <aside class="top-notice-bar" aria-label="상단 안내 바">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <div style="display: flex; align-items: center; gap: 8px;">
+    <div class="container top-notice-container">
+      <div class="top-notice-left">
         <span class="badge">공식 안내</span>
-        <span>코오롱 모빌리티 X 스튜디오 아우토믹 파트너십 제휴 • 전 금융사 실시간 최저금리 비교 견적</span>
-      </div>
-      <div>
-
+        <span class="top-notice-text">코오롱 모빌리티 X 스튜디오 아우토믹 파트너십 제휴 • 전 금융사 실시간 최저금리 비교 견적</span>
       </div>
     </div>
   </aside>
@@ -43,12 +40,12 @@
           <img src="images/automic_logo.png" alt="STUDIO AUTOMIC car, care & more" class="header-logo-img" />
         </a>
 
-        <!-- GNB 메뉴 (두번째 이미지 구성) -->
+        <!-- GNB 메뉴 (서브 페이지 카테고리 연결) -->
         <ul class="gnb-menu">
-          <li><a href="#sectionPromo">특판차량</a></li>
-          <li><a href="#sectionImmediate">즉시출고</a></li>
-          <li><a href="#sectionEco">친환경 특가</a></li>
-          <li><a href="#sectionBusiness">사업자 특가</a></li>
+          <li><a href="cars.html?category=promo">특판차량</a></li>
+          <li><a href="cars.html?category=immd">즉시출고</a></li>
+          <li><a href="cars.html?category=eco">친환경 특가</a></li>
+          <li><a href="cars.html?category=biz">사업자 특가</a></li>
           <li><a href="#sectionTrust">고객 신뢰</a></li>
           <li><a href="#sectionReviews">실출고 후기</a></li>
         </ul>
@@ -65,10 +62,105 @@
             </svg>
             <span>상담 신청</span>
           </button>
+          <!-- 모바일 햄버거 메뉴 버튼 -->
+          <button type="button" class="btn-mobile-menu-toggle" id="mobileMenuToggle" aria-label="모바일 메뉴 열기">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
         </div>
       </nav>
     </div>
   </header>
+
+  <!-- 모바일 슬라이드 내비게이션 드로어 -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true">
+    <div class="mobile-drawer-content" role="dialog" aria-modal="true" aria-label="모바일 내비게이션">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="drawer-logo" title="스튜디오 아우토믹 홈">
+          <img src="images/automic_logo.png" alt="STUDIO AUTOMIC" />
+        </a>
+        <button type="button" class="btn-drawer-close" id="mobileDrawerClose" aria-label="메뉴 닫기">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <div class="drawer-section-title">차량 맞춤 검색 카테고리</div>
+        <ul class="mobile-drawer-nav">
+          <li>
+            <a href="cars.html?category=promo" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge promo">HOT</span>
+                <strong>10월 특별 프로모션</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=immd" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge immd">7일</span>
+                <strong>즉시출고 가능 차량</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=eco" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge eco">ECO</span>
+                <strong>친환경 전기·하이브리드</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=biz" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge biz">BIZ</span>
+                <strong>사업자 맞춤 특판</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+          <li>
+            <a href="cars.html?category=all" class="drawer-nav-item">
+              <span class="drawer-nav-label">
+                <span class="drawer-badge all">ALL</span>
+                <strong>전체 차종 필터 검색</strong>
+              </span>
+              <span class="drawer-arrow">›</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="drawer-section-title" style="margin-top: 24px;">브랜드 안내</div>
+        <ul class="mobile-drawer-subnav">
+          <li><a href="#sectionTrust">🏢 코오롱 모빌리티 파트너십 & 고객 신뢰</a></li>
+          <li><a href="#sectionReviews">⭐ 실출고 고객 생생 리뷰</a></li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="tel:1599-7721" class="drawer-tel-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <div>
+            <span class="tel-sub">전문 컨설턴트 직통</span>
+            <strong class="tel-main">1599-7721</strong>
+          </div>
+        </a>
+        <button type="button" class="drawer-consult-btn" onclick="window.openConsultModal('모바일 메뉴 간편 견적');">
+          무료 비교견적 신청하기
+        </button>
+      </div>
+    </div>
+  </div>
 
   <main>
     <!-- 3. 상단 히어로 배너 슬라이더 (3개 슬라이딩) -->
@@ -205,7 +297,7 @@
                     </svg>
                   </button>
                   <a href="#sectionBuffer" class="btn-hero-secondary">
-                    <span>렌트 VS 리스 비교하기</span>
+                    <span>아우토믹 특장점 보기</span>
                   </a>
                 </div>
               </div>
@@ -256,7 +348,7 @@
       </div>
     </section>
 
-    <!-- 4. 특판 차량 섹션 (#sectionPromo) - 첫번째 이미지 디자인 충실 반영 + 슬라이딩 -->
+    <!-- 4. 특판 차량 섹션 (#sectionPromo) - 첫번째 이미지 디자인 충실 반영 + 슬라이딩 + 전체보기/더보기 -->
     <section id="sectionPromo" class="section-wrap" aria-labelledby="promoHeading">
       <div class="container">
         <div class="section-title-area">
@@ -269,9 +361,17 @@
               스튜디오 아우토믹 특별 프로모션 차종, 비공식 금융사 혜택까지 더해진 파격적인 조건
             </p>
           </div>
-          <div class="slider-nav-arrows">
-            <button type="button" class="nav-arrow-btn prev" aria-label="이전 특판차량">‹</button>
-            <button type="button" class="nav-arrow-btn next" aria-label="다음 특판차량">›</button>
+          <div class="section-action-controls">
+            <a href="cars.html?category=promo" class="btn-section-viewall" title="10월 특별 프로모션 차종 전체보기">
+              <span class="viewall-text">전체보기</span>
+              <svg class="viewall-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <div class="slider-nav-arrows">
+              <button type="button" class="nav-arrow-btn prev" aria-label="이전 특판차량">‹</button>
+              <button type="button" class="nav-arrow-btn next" aria-label="다음 특판차량">›</button>
+            </div>
           </div>
         </div>
 
@@ -281,10 +381,25 @@
             <!-- JS 렌더링 -->
           </div>
         </div>
+
+        <!-- 전체보기 그리드 영역 (토글 확장) -->
+        <div id="promoCarGrid" class="car-expand-grid" style="display: none;">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 슬라이더 하단 더보기 버튼 -->
+        <div class="section-more-action">
+          <button type="button" class="btn-more-toggle" data-target="promo" aria-expanded="false">
+            <span class="btn-text">10월 특별 프로모션 차종 더보기 (전체 8대 펼치기)</span>
+            <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- 5. 즉시출고 섹션 (#sectionImmediate) - 7일 이내 즉시출고 가능 차량 -->
+    <!-- 5. 즉시출고 섹션 (#sectionImmediate) - 7일 이내 즉시출고 가능 차량 + 전체보기/더보기 -->
     <section id="sectionImmediate" class="section-wrap bg-gray" aria-labelledby="immdHeading">
       <div class="container">
         <div class="section-title-area">
@@ -297,9 +412,17 @@
               출고 대기 줄이고 견적 혜택은 크게! 선구매 확보 물량으로 계약 즉시 전국 안전 탁송
             </p>
           </div>
-          <div class="slider-nav-arrows">
-            <button type="button" class="nav-arrow-btn prev" aria-label="이전 즉시출고차량">‹</button>
-            <button type="button" class="nav-arrow-btn next" aria-label="다음 즉시출고차량">›</button>
+          <div class="section-action-controls">
+            <a href="cars.html?category=immd" class="btn-section-viewall" title="즉시출고 차량 전체보기">
+              <span class="viewall-text">전체보기</span>
+              <svg class="viewall-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <div class="slider-nav-arrows">
+              <button type="button" class="nav-arrow-btn prev" aria-label="이전 즉시출고차량">‹</button>
+              <button type="button" class="nav-arrow-btn next" aria-label="다음 즉시출고차량">›</button>
+            </div>
           </div>
         </div>
 
@@ -308,6 +431,21 @@
           <div id="immdCarTrack" class="car-slider-track">
             <!-- JS 렌더링 -->
           </div>
+        </div>
+
+        <!-- 전체보기 그리드 영역 (토글 확장) -->
+        <div id="immdCarGrid" class="car-expand-grid" style="display: none;">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 슬라이더 하단 더보기 버튼 -->
+        <div class="section-more-action">
+          <button type="button" class="btn-more-toggle" data-target="immediate" aria-expanded="false">
+            <span class="btn-text">7일 이내 도착! 즉시출고 차량 더보기 (전체 8대 펼치기)</span>
+            <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -364,65 +502,6 @@
           </div>
         </div>
 
-        <!-- 장기렌트 VS 리스 스마트 비교 가이드 인포그래픽 -->
-        <div class="compare-guide-box">
-          <div class="compare-guide-title">
-            <div>
-              <h3>장기렌트 VS 오토리스 스마트 선택 가이드</h3>
-              <p style="font-size: 13px; color: #64748b; margin-top: 4px;">어떤 상품이 나에게 더 유리할까요? 한눈에 명쾌하게 비교해 드립니다.</p>
-            </div>
-            <div class="compare-tabs">
-              <button type="button" class="tab-btn active" data-tab="all">전체 비교</button>
-              <button type="button" class="tab-btn" data-tab="rent">장기렌트 추천</button>
-              <button type="button" class="tab-btn" data-tab="lease">오토리스 추천</button>
-            </div>
-          </div>
-
-          <div class="compare-table-wrap">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th style="width: 20%;">비교 항목</th>
-                  <th style="width: 40%; background: #fef2f2; color: #991b1b;">신차 장기렌트 (Car Rental)</th>
-                  <th style="width: 40%; background: #eff6ff; color: #1e40af;">오토리스 (Auto Lease)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-type="rent">
-                  <td><strong>번호판</strong></td>
-                  <td class="highlight">‘하, 호’ 식별 번호판 (최근 인식 대중화)</td>
-                  <td>일반 자가용 번호판 (품위 유지 우수)</td>
-                </tr>
-                <tr data-type="rent">
-                  <td><strong>보험 및 세금</strong></td>
-                  <td class="highlight">월 렌트료에 자동차세·보험료 완전 포함 (사고 시 할증 0원)</td>
-                  <td>개인 자동차보험 별도 가입 (무사고 경력 유지 가능)</td>
-                </tr>
-                <tr data-type="lease">
-                  <td><strong>부채 및 신용평가</strong></td>
-                  <td class="highlight">금융사 부채로 미인식 (대출 한도 및 DSR 무영향)</td>
-                  <td>금융 대출 상품으로 인식 (신용도에 일부 반영)</td>
-                </tr>
-                <tr data-type="rent">
-                  <td><strong>사업자 비용처리</strong></td>
-                  <td>연간 최대 1,500만 원 전액 손비 인정 (경비 처리)</td>
-                  <td>연간 최대 1,500만 원 전액 손비 인정 (경비 처리)</td>
-                </tr>
-                <tr data-type="all">
-                  <td><strong>부가세 환급</strong></td>
-                  <td class="highlight">9인승 이상 승합차 및 경차 전액 부가세 환급</td>
-                  <td>9인승 이상 승합차 및 경차 전액 부가세 환급</td>
-                </tr>
-                <tr data-type="all">
-                  <td><strong>추천 대상</strong></td>
-                  <td class="highlight">운행거리가 많거나 사고 할증 걱정 없는 편리함을 원하는 분</td>
-                  <td class="highlight">일반 번호판을 선호하고 개인 보험 경력을 유지하고 싶은 분</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
         <!-- 신뢰 통계 카운터 바 -->
         <div class="trust-stats-bar">
           <div class="stat-item">
@@ -446,7 +525,7 @@
       </div>
     </section>
 
-    <!-- 7. 친환경 특가 섹션 (#sectionEco) - 전기차 & 하이브리드 -->
+    <!-- 7. 친환경 특가 섹션 (#sectionEco) - 전기차 & 하이브리드 + 전체보기/더보기 -->
     <section id="sectionEco" class="section-wrap" aria-labelledby="ecoHeading">
       <div class="container">
         <div class="section-title-area">
@@ -459,9 +538,17 @@
               지자체 친환경 보조금 100% 반영! 유지비와 취등록세 절감까지 누리는 친환경 스마트 라인업
             </p>
           </div>
-          <div class="slider-nav-arrows">
-            <button type="button" class="nav-arrow-btn prev" aria-label="이전 친환경차량">‹</button>
-            <button type="button" class="nav-arrow-btn next" aria-label="다음 친환경차량">›</button>
+          <div class="section-action-controls">
+            <a href="cars.html?category=eco" class="btn-section-viewall" title="친환경 특가 차량 전체보기">
+              <span class="viewall-text">전체보기</span>
+              <svg class="viewall-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <div class="slider-nav-arrows">
+              <button type="button" class="nav-arrow-btn prev" aria-label="이전 친환경차량">‹</button>
+              <button type="button" class="nav-arrow-btn next" aria-label="다음 친환경차량">›</button>
+            </div>
           </div>
         </div>
 
@@ -471,10 +558,25 @@
             <!-- JS 렌더링 -->
           </div>
         </div>
+
+        <!-- 전체보기 그리드 영역 (토글 확장) -->
+        <div id="ecoCarGrid" class="car-expand-grid" style="display: none;">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 슬라이더 하단 더보기 버튼 -->
+        <div class="section-more-action">
+          <button type="button" class="btn-more-toggle" data-target="eco" aria-expanded="false">
+            <span class="btn-text">친환경 전기차 / 하이브리드 특가 더보기 (전체 8대 펼치기)</span>
+            <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- 8. 사업자 특가 섹션 (#sectionBusiness) - 개인사업자 / 법인 특화 -->
+    <!-- 8. 사업자 특가 섹션 (#sectionBusiness) - 개인사업자 / 법인 특화 + 전체보기/더보기 -->
     <section id="sectionBusiness" class="section-wrap bg-gray" aria-labelledby="bizHeading">
       <div class="container">
         <div class="section-title-area">
@@ -487,9 +589,17 @@
               월 렌트·리스료 100% 손비처리, 9인승 이상 부가세 환급 및 건강보험료 인상 없는 절세 특화 라인업
             </p>
           </div>
-          <div class="slider-nav-arrows">
-            <button type="button" class="nav-arrow-btn prev" aria-label="이전 사업자차량">‹</button>
-            <button type="button" class="nav-arrow-btn next" aria-label="다음 사업자차량">›</button>
+          <div class="section-action-controls">
+            <a href="cars.html?category=biz" class="btn-section-viewall" title="사업자 맞춤 특판 차량 전체보기">
+              <span class="viewall-text">전체보기</span>
+              <svg class="viewall-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <div class="slider-nav-arrows">
+              <button type="button" class="nav-arrow-btn prev" aria-label="이전 사업자차량">‹</button>
+              <button type="button" class="nav-arrow-btn next" aria-label="다음 사업자차량">›</button>
+            </div>
           </div>
         </div>
 
@@ -498,6 +608,21 @@
           <div id="bizCarTrack" class="car-slider-track">
             <!-- JS 렌더링 -->
           </div>
+        </div>
+
+        <!-- 전체보기 그리드 영역 (토글 확장) -->
+        <div id="bizCarGrid" class="car-expand-grid" style="display: none;">
+          <!-- JS 렌더링 -->
+        </div>
+
+        <!-- 슬라이더 하단 더보기 버튼 -->
+        <div class="section-more-action">
+          <button type="button" class="btn-more-toggle" data-target="business" aria-expanded="false">
+            <span class="btn-text">개인 &amp; 법인 사업자 맞춤 특판 더보기 (전체 8대 펼치기)</span>
+            <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
